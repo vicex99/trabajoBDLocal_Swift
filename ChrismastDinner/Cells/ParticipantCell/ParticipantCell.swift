@@ -10,7 +10,8 @@ import UIKit
 
 class ParticipantCell: UITableViewCell {
     
-    @IBOutlet var name: String!
+    @IBOutlet var cellName: UILabel!
+    @IBOutlet var checkMoney: UIImageView!
 
     override func awakeFromNib() {
         super.awakeFromNib()

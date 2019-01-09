@@ -11,6 +11,18 @@
 		C39035ED21E63FE400246543 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39035EC21E63FE400246543 /* AppDelegate.swift */; };
 		C39035F421E63FE600246543 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C39035F321E63FE600246543 /* Assets.xcassets */; };
 		C39035F721E63FE600246543 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C39035F521E63FE600246543 /* LaunchScreen.storyboard */; };
+		C390360B21E6461A00246543 /* ParticipantListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C390360921E6461A00246543 /* ParticipantListVC.swift */; };
+		C390360C21E6461A00246543 /* ParticipantListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C390360A21E6461A00246543 /* ParticipantListVC.xib */; };
+		C390360F21E647AE00246543 /* Participant.swift in Sources */ = {isa = PBXBuildFile; fileRef = C390360E21E647AE00246543 /* Participant.swift */; };
+		C390361121E6490C00246543 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C390361021E6490C00246543 /* Repository.swift */; };
+		C390361321E6493200246543 /* LocalDinnerRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C390361221E6493200246543 /* LocalDinnerRepository.swift */; };
+		C390361521E64B4A00246543 /* ParticipantEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C390361421E64B4A00246543 /* ParticipantEntity.swift */; };
+		C390361921E6560600246543 /* ParticipantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C390361721E6560600246543 /* ParticipantCell.swift */; };
+		C390361A21E6560600246543 /* ParticipantCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C390361821E6560600246543 /* ParticipantCell.xib */; };
+		C390361F21E65C3700246543 /* UpdateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C390361D21E65C3700246543 /* UpdateVC.swift */; };
+		C390362021E65C3700246543 /* UpdateVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C390361E21E65C3700246543 /* UpdateVC.xib */; };
+		C390362321E65C4A00246543 /* AddVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C390362121E65C4A00246543 /* AddVC.swift */; };
+		C390362421E65C4A00246543 /* AddVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C390362221E65C4A00246543 /* AddVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +32,18 @@
 		C39035F321E63FE600246543 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C39035F621E63FE600246543 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C39035F821E63FE600246543 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C390360921E6461A00246543 /* ParticipantListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantListVC.swift; sourceTree = "<group>"; };
+		C390360A21E6461A00246543 /* ParticipantListVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ParticipantListVC.xib; sourceTree = "<group>"; };
+		C390360E21E647AE00246543 /* Participant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Participant.swift; sourceTree = "<group>"; };
+		C390361021E6490C00246543 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		C390361221E6493200246543 /* LocalDinnerRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDinnerRepository.swift; sourceTree = "<group>"; };
+		C390361421E64B4A00246543 /* ParticipantEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantEntity.swift; sourceTree = "<group>"; };
+		C390361721E6560600246543 /* ParticipantCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantCell.swift; sourceTree = "<group>"; };
+		C390361821E6560600246543 /* ParticipantCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ParticipantCell.xib; sourceTree = "<group>"; };
+		C390361D21E65C3700246543 /* UpdateVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateVC.swift; sourceTree = "<group>"; };
+		C390361E21E65C3700246543 /* UpdateVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpdateVC.xib; sourceTree = "<group>"; };
+		C390362121E65C4A00246543 /* AddVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVC.swift; sourceTree = "<group>"; };
+		C390362221E65C4A00246543 /* AddVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddVC.xib; sourceTree = "<group>"; };
 		EA39C036B5E3DD9D33622215 /* Pods-ChrismastDinner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChrismastDinner.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChrismastDinner/Pods-ChrismastDinner.release.xcconfig"; sourceTree = "<group>"; };
 		EDF141085AA7FBFF1CA59ED9 /* Pods-ChrismastDinner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChrismastDinner.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChrismastDinner/Pods-ChrismastDinner.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -89,6 +113,9 @@
 		C39035FE21E6402F00246543 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				C390361C21E65C0200246543 /* UpdateView */,
+				C390361B21E65B8900246543 /* AddView */,
+				C390360D21E6464100246543 /* ParticipantList */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -96,6 +123,7 @@
 		C39035FF21E6405A00246543 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C390360E21E647AE00246543 /* Participant.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -112,6 +140,7 @@
 		C390360121E6408300246543 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				C390361621E6559F00246543 /* ParticipantCell */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -119,6 +148,8 @@
 		C390360321E640CA00246543 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				C390361021E6490C00246543 /* Repository.swift */,
+				C390361221E6493200246543 /* LocalDinnerRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -126,8 +157,45 @@
 		C390360421E640F000246543 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				C390361421E64B4A00246543 /* ParticipantEntity.swift */,
 			);
 			path = Entities;
+			sourceTree = "<group>";
+		};
+		C390360D21E6464100246543 /* ParticipantList */ = {
+			isa = PBXGroup;
+			children = (
+				C390360921E6461A00246543 /* ParticipantListVC.swift */,
+				C390360A21E6461A00246543 /* ParticipantListVC.xib */,
+			);
+			path = ParticipantList;
+			sourceTree = "<group>";
+		};
+		C390361621E6559F00246543 /* ParticipantCell */ = {
+			isa = PBXGroup;
+			children = (
+				C390361721E6560600246543 /* ParticipantCell.swift */,
+				C390361821E6560600246543 /* ParticipantCell.xib */,
+			);
+			path = ParticipantCell;
+			sourceTree = "<group>";
+		};
+		C390361B21E65B8900246543 /* AddView */ = {
+			isa = PBXGroup;
+			children = (
+				C390362121E65C4A00246543 /* AddVC.swift */,
+				C390362221E65C4A00246543 /* AddVC.xib */,
+			);
+			path = AddView;
+			sourceTree = "<group>";
+		};
+		C390361C21E65C0200246543 /* UpdateView */ = {
+			isa = PBXGroup;
+			children = (
+				C390361D21E65C3700246543 /* UpdateVC.swift */,
+				C390361E21E65C3700246543 /* UpdateVC.xib */,
+			);
+			path = UpdateView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,6 +209,7 @@
 				C39035E521E63FE400246543 /* Sources */,
 				C39035E621E63FE400246543 /* Frameworks */,
 				C39035E721E63FE400246543 /* Resources */,
+				F5FD9120D2F6B5609C8883A3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -189,8 +258,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C390362421E65C4A00246543 /* AddVC.xib in Resources */,
+				C390362021E65C3700246543 /* UpdateVC.xib in Resources */,
 				C39035F721E63FE600246543 /* LaunchScreen.storyboard in Resources */,
 				C39035F421E63FE600246543 /* Assets.xcassets in Resources */,
+				C390360C21E6461A00246543 /* ParticipantListVC.xib in Resources */,
+				C390361A21E6560600246543 /* ParticipantCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,21 +275,39 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-ChrismastDinner-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F5FD9120D2F6B5609C8883A3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ChrismastDinner/Pods-ChrismastDinner-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChrismastDinner/Pods-ChrismastDinner-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -226,7 +317,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C390362321E65C4A00246543 /* AddVC.swift in Sources */,
+				C390360B21E6461A00246543 /* ParticipantListVC.swift in Sources */,
 				C39035ED21E63FE400246543 /* AppDelegate.swift in Sources */,
+				C390360F21E647AE00246543 /* Participant.swift in Sources */,
+				C390361321E6493200246543 /* LocalDinnerRepository.swift in Sources */,
+				C390361521E64B4A00246543 /* ParticipantEntity.swift in Sources */,
+				C390361F21E65C3700246543 /* UpdateVC.swift in Sources */,
+				C390361121E6490C00246543 /* Repository.swift in Sources */,
+				C390361921E6560600246543 /* ParticipantCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

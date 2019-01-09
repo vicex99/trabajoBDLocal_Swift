@@ -6,5 +6,7 @@ target 'ChrismastDinner' do
   use_frameworks!
 
   # Pods for ChrismastDinner
-
+  pod 'Alamofire'
+  pod 'RealmSwift'
+  
 end
