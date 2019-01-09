@@ -1,0 +1,6 @@
+framework module Pods_ChrismastDinner {
+  umbrella header "Pods-ChrismastDinner-umbrella.h"
+
+  export *
+  module * { export * }
+}
