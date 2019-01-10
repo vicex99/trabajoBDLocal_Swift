@@ -63,19 +63,25 @@ class UpdateVC: UIViewController {
     
     @IBAction func create() {
         let participant = Participant()
-        participant.id  = UUID().uuidString
+        participant.id  = updData?.id
         participant.myName = tfName.text!
-        participant.myDateParticipation = Date()
+        participant.myDateParticipation = updData?.myDateParticipation
         participant.paid = swtpago.isOn
-    
-        // animacion de transicion
-        UIView.animate(withDuration: 0.4, animations: {
-            self.view.backgroundColor =
-                UIColor.white.withAlphaComponent(0.0)
-        }) { (bool) in
-            if self.repository.update(a: participant) {
-                self.delegate?.updViewController(self)
+        
+         if (comproveDontExist(participant: participant) && participant.myName != "") {
+            // animacion de transicion
+            UIView.animate(withDuration: 0.4, animations: {
+                self.view.backgroundColor =
+                    UIColor.white.withAlphaComponent(0.0)
+            }) { (bool) in
+                if self.repository.update(a: participant) {
+                    self.delegate?.updViewController(self)
+                }
             }
+         }else {
+            let alert = UIAlertController(title: "ERROR", message: "name actual used", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
         }
     }
     
@@ -84,7 +90,7 @@ class UpdateVC: UIViewController {
         let actualData = repository.getAll()
         
         for part in actualData {
-            if part.myName == participant.myName {
+            if part.myName == participant.myName && part.id != participant.id {
                 end = false
             }
         }

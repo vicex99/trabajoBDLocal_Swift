@@ -58,7 +58,7 @@ class AddVC: UIViewController {
         participant.myDateParticipation = Date()
         participant.paid = swtpago.isOn
         
-        if (comproveDontExist(participant: participant)) {
+        if (comproveDontExist(participant: participant) && participant.myName != "") {
             // animacion de transicion
             UIView.animate(withDuration: 0.4, animations: {
                 self.view.backgroundColor =
@@ -76,14 +76,14 @@ class AddVC: UIViewController {
     }
     
     private func comproveDontExist(participant: Participant) -> Bool{
-        var end = true
+        
         let actualData = repository.getAll()
         
         for part in actualData {
             if part.myName == participant.myName {
-                end = false
+                return false
             }
         }
-        return end
+        return true
     }
 }

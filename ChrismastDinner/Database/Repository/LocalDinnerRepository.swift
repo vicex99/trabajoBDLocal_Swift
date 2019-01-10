@@ -39,6 +39,17 @@ class LocalDinnerRepository: Repository {
         return nil
     }
     
+    func get(name:String) -> Participant? {
+        do {
+            let realm = try! Realm()
+            if let entity = realm.objects(ParticipantEntity.self).filter("name == %@",name).first {
+                let model = entity.ParticipantModel()
+                return model
+            }
+        }
+        return nil
+    }
+    
     func create(a: Participant) -> Bool {
         do {
             let realm = try! Realm()
@@ -69,9 +80,8 @@ class LocalDinnerRepository: Repository {
     }
     
     func update(a: Participant) -> Bool {
-        if (delete(a: a)) {
-            return create(a: a)
-        }
-        return false
+       return create(a: a)
+       
     }
+
 }

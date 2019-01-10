@@ -62,6 +62,7 @@ class ParticipantListVC: UIViewController {
     internal func goUpdate(_ index: Int) {
         let participant = participants[index]
         let updVC = UpdateVC(data: participant, repository: repository)
+        updVC.delegate = self
         updVC.modalTransitionStyle = .coverVertical
         updVC.modalPresentationStyle = .overCurrentContext
         present(updVC, animated: true, completion: nil)
