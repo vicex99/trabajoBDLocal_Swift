@@ -75,7 +75,7 @@ class UpdateVC: UIViewController {
                     UIColor.white.withAlphaComponent(0.0)
             }) { (bool) in
                 if self.repository.update(a: participant) {
-                    self.delegate?.updViewController(self)
+                    self.back()
                 }
             }
          }else {
@@ -83,6 +83,10 @@ class UpdateVC: UIViewController {
             alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
+    }
+    
+    @IBAction private func back() {
+        self.delegate?.updViewController(self)
     }
     
     private func comproveDontExist(participant: Participant) -> Bool{

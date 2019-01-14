@@ -23,6 +23,8 @@
 		C390362021E65C3700246543 /* UpdateVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C390361E21E65C3700246543 /* UpdateVC.xib */; };
 		C390362321E65C4A00246543 /* AddVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C390362121E65C4A00246543 /* AddVC.swift */; };
 		C390362421E65C4A00246543 /* AddVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C390362221E65C4A00246543 /* AddVC.xib */; };
+		C3A7B1E321E8E4F7005F18AD /* DropDownFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A7B1E121E8E4F7005F18AD /* DropDownFilter.swift */; };
+		C3A7B1E421E8E4F7005F18AD /* DropDownFilter.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3A7B1E221E8E4F7005F18AD /* DropDownFilter.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		C390361E21E65C3700246543 /* UpdateVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpdateVC.xib; sourceTree = "<group>"; };
 		C390362121E65C4A00246543 /* AddVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVC.swift; sourceTree = "<group>"; };
 		C390362221E65C4A00246543 /* AddVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddVC.xib; sourceTree = "<group>"; };
+		C3A7B1E121E8E4F7005F18AD /* DropDownFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownFilter.swift; sourceTree = "<group>"; };
+		C3A7B1E221E8E4F7005F18AD /* DropDownFilter.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DropDownFilter.xib; sourceTree = "<group>"; };
 		EA39C036B5E3DD9D33622215 /* Pods-ChrismastDinner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChrismastDinner.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChrismastDinner/Pods-ChrismastDinner.release.xcconfig"; sourceTree = "<group>"; };
 		EDF141085AA7FBFF1CA59ED9 /* Pods-ChrismastDinner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChrismastDinner.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChrismastDinner/Pods-ChrismastDinner.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -113,6 +117,7 @@
 		C39035FE21E6402F00246543 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				C3A7B1E021E8E4B3005F18AD /* DropDownFilter */,
 				C390361C21E65C0200246543 /* UpdateView */,
 				C390361B21E65B8900246543 /* AddView */,
 				C390360D21E6464100246543 /* ParticipantList */,
@@ -198,6 +203,15 @@
 			path = UpdateView;
 			sourceTree = "<group>";
 		};
+		C3A7B1E021E8E4B3005F18AD /* DropDownFilter */ = {
+			isa = PBXGroup;
+			children = (
+				C3A7B1E121E8E4F7005F18AD /* DropDownFilter.swift */,
+				C3A7B1E221E8E4F7005F18AD /* DropDownFilter.xib */,
+			);
+			path = DropDownFilter;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -261,6 +275,7 @@
 				C390362421E65C4A00246543 /* AddVC.xib in Resources */,
 				C390362021E65C3700246543 /* UpdateVC.xib in Resources */,
 				C39035F721E63FE600246543 /* LaunchScreen.storyboard in Resources */,
+				C3A7B1E421E8E4F7005F18AD /* DropDownFilter.xib in Resources */,
 				C39035F421E63FE600246543 /* Assets.xcassets in Resources */,
 				C390360C21E6461A00246543 /* ParticipantListVC.xib in Resources */,
 				C390361A21E6560600246543 /* ParticipantCell.xib in Resources */,
@@ -319,6 +334,7 @@
 			files = (
 				C390362321E65C4A00246543 /* AddVC.swift in Sources */,
 				C390360B21E6461A00246543 /* ParticipantListVC.swift in Sources */,
+				C3A7B1E321E8E4F7005F18AD /* DropDownFilter.swift in Sources */,
 				C39035ED21E63FE400246543 /* AppDelegate.swift in Sources */,
 				C390360F21E647AE00246543 /* Participant.swift in Sources */,
 				C390361321E6493200246543 /* LocalDinnerRepository.swift in Sources */,

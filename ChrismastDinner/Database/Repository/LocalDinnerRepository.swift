@@ -50,6 +50,21 @@ class LocalDinnerRepository: Repository {
         return nil
     }
     
+    func getPaid(blnPaid: Bool) -> [Participant]?{
+        do {
+            let allData = getAll()
+            var allFilterData: [Participant] = []
+            
+            for part in allData {
+                if part.paid == blnPaid {
+                    allFilterData.append(part)
+                }
+            }
+        }
+        return nil
+    }
+    
+    
     func create(a: Participant) -> Bool {
         do {
             let realm = try! Realm()

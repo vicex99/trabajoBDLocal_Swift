@@ -55,6 +55,14 @@
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9XT-II-Qgq">
+                            <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" image="cancel"/>
+                            <connections>
+                                <action selector="back" destination="-1" eventType="touchUpInside" id="blM-gF-iBP"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" red="0.43930554389999998" green="0.72255879639999998" blue="0.91001939769999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </view>
@@ -64,4 +72,7 @@
             <point key="canvasLocation" x="24.5" y="51.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="cancel" width="37" height="37"/>
+    </resources>
 </document>

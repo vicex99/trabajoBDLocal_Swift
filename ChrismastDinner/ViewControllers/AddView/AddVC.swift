@@ -65,7 +65,7 @@ class AddVC: UIViewController {
                     UIColor.white.withAlphaComponent(0.0)
             }) { (bool) in
                 if self.repository.create(a: participant) {
-                    self.delegate?.addViewController(self)
+                    self.back()
                 }
             }
         }else {
@@ -73,6 +73,10 @@ class AddVC: UIViewController {
             alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
+    }
+    
+    @IBAction private func back() {
+        self.delegate?.addViewController(self)
     }
     
     private func comproveDontExist(participant: Participant) -> Bool{

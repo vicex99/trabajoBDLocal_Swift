@@ -8,28 +8,62 @@
 
 import UIKit
 
-class DropDownFilter: UIViewController {
+protocol DropDownFilterDelegate: class {
+    func filterList(_ btnSelect: String)
+    func returnListViewController(_ vc:DropDownFilter)
+}
 
+class DropDownFilter: UIViewController {
+    
+    @IBOutlet weak var btnCancel: UIButton!
+    @IBOutlet weak var settingsView: UIView!
+    
+    @IBOutlet weak var btnPaid: UIButton!
+    @IBOutlet weak var btnNPaid: UIButton!
+    @IBOutlet weak var btnShowAll: UIButton!
+    
+    internal weak var delegate: DropDownFilterDelegate!
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        UIView.animate(withDuration: 1.4, animations: {
+            self.view.backgroundColor =
+                UIColor.gray.withAlphaComponent(0.8)
+        })
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        btnCancel.layer.cornerRadius = 8.0
+        btnCancel.layer.masksToBounds = true
+        
+        settingsView.layer.cornerRadius = 8.0
+        settingsView.layer.masksToBounds = true
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // back to list
+    @IBAction private func back() {
+        self.delegate.returnListViewController(self)
     }
-    */
+    
+    // button settings
+    @IBAction func paidFilter(){
+        self.delegate.filterList("paid")
+        back()
+    }
+    @IBAction func noPaidFilter(){
+        self.delegate.filterList("noPaid")
+        back()
+    }
+    @IBAction func noFilter(){
+        self.delegate.filterList("no")
+        back()
+    }
 
 }

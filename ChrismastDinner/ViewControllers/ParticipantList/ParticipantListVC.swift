@@ -13,7 +13,12 @@ class ParticipantListVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     internal var participants: [Participant]!
+    internal var filteredParticipants: [Participant]!
+    internal var filteredMissParticipants: [Participant]!
     internal var repository: LocalDinnerRepository!
+
+    internal var isFilteringAfirmative: Bool!
+    internal var isFilteringnegative: Bool!
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -28,13 +33,24 @@ class ParticipantListVC: UIViewController {
 
         self.repository = LocalDinnerRepository()
         self.participants = self.repository.getAll()
+        self.filteredMissParticipants = self.repository.getPaid(blnPaid: false)
+        self.filteredParticipants = self.repository.getPaid(blnPaid: true)
         
         title = "participants"
+        isFilteringAfirmative = false
+        isFilteringnegative = false
         
+        // defined layout cell
         registerCell()
+        
+        // tabBar add buton
         let addbarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addPressed))
+        let filtersButtonItem = UIBarButtonItem(title: "filter", style:.plain, target: self, action: #selector(filterPressed))
         
         navigationItem.rightBarButtonItem = addbarButtonItem
+        navigationItem.leftBarButtonItem = filtersButtonItem
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -49,6 +65,7 @@ class ParticipantListVC: UIViewController {
         tableView.register(nib, forCellReuseIdentifier: identifier)
     }
     
+    
     @objc internal func addPressed () {
         let addVC = AddVC(repository)
         addVC.delegate = self
@@ -56,6 +73,14 @@ class ParticipantListVC: UIViewController {
         addVC.modalPresentationStyle = .overCurrentContext
         present(addVC, animated: true, completion: nil)
         
+    }
+    
+    @objc internal func filterPressed () {
+        let filterVC = DropDownFilter()
+        filterVC.delegate = self
+        filterVC.modalTransitionStyle = .coverVertical
+        filterVC.modalPresentationStyle = .overCurrentContext
+        present(filterVC, animated: true, completion: nil)
     }
     
     
@@ -69,8 +94,6 @@ class ParticipantListVC: UIViewController {
     }
 }
 
-
-
 // tableView extension
 
 extension ParticipantListVC : UITableViewDataSource, UITableViewDelegate {
@@ -80,6 +103,11 @@ extension ParticipantListVC : UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if isFilteringAfirmative {
+            return filteredMissParticipants.count
+        } else if isFilteringnegative {
+            return filteredParticipants.count
+        }
         return participants.count
     }
     
@@ -91,12 +119,19 @@ extension ParticipantListVC : UITableViewDataSource, UITableViewDelegate {
     // set cells values
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: ParticipantCell = tableView.dequeueReusableCell(withIdentifier: "ParticipantCell", for: indexPath) as! ParticipantCell
-        
-        let participant = participants[indexPath.row]
+        var participant: Participant
+        if isFilteringAfirmative {
+            participant = filteredParticipants[indexPath.row]
+            
+        } else if isFilteringnegative {
+            participant = filteredMissParticipants[indexPath.row]
+        } else {
+            participant = participants[indexPath.row]
+            
+        }
         
         cell.cellName.text = participant.myName
         cell.checkMoney.isHidden = participant.paid
-        
         
         return cell
     }
@@ -116,21 +151,71 @@ extension ParticipantListVC : UITableViewDataSource, UITableViewDelegate {
 }
 
 
-extension ParticipantListVC: AddViewControllerDelegate, UpdateViewControllerDelegate {
+extension ParticipantListVC: AddViewControllerDelegate, UpdateViewControllerDelegate, DropDownFilterDelegate{
+
+    func filterList(_ btnSelect: String) {
+        if btnSelect == "paid" {
+            self.filteredParticipants = self.repository.getPaid(blnPaid: true)
+            self.isFilteringAfirmative = true
+            self.isFilteringnegative = false
+            
+            
+        } else if btnSelect == "noPaid" {
+            self.filteredParticipants = self.repository.getPaid(blnPaid: false)
+            self.isFilteringAfirmative = false
+            self.isFilteringnegative = true
+            
+        } else {
+            self.isFilteringAfirmative = false
+            self.isFilteringnegative = false
+        }
+    }
+    
+    func returnListViewController(_ vc: DropDownFilter) {
+        vc.dismiss(animated: true) {
+            
+            if self.isFilteringAfirmative{
+                self.filteredParticipants = self.repository.getAll()
+                
+            } else if self.isFilteringnegative{
+                self.filteredMissParticipants = self.repository.getAll()
+                
+            }else {
+                self.participants = self.repository.getAll()
+            }
+            self.tableView.reloadData()
+        }
+    }
+
     func addViewController(_ vc:AddVC) {
         vc.dismiss(animated: true) {
             
-            self.participants = self.repository.getAll()
+            if self.isFilteringAfirmative{
+                self.filteredParticipants = self.repository.getAll()
+                
+            } else if self.isFilteringnegative{
+                self.filteredMissParticipants = self.repository.getAll()
+                
+            }else {
+                self.participants = self.repository.getAll()
+            }
             self.tableView.reloadData()
         }
     }
-    
+
     func updViewController(_ vc:UpdateVC) {
         vc.dismiss(animated: true) {
 
-            self.participants = self.repository.getAll()
+            if self.isFilteringAfirmative{
+                self.filteredParticipants = self.repository.getAll()
+                
+            } else if self.isFilteringnegative{
+                self.filteredMissParticipants = self.repository.getAll()
+                
+            }else {
+                self.participants = self.repository.getAll()
+            }
             self.tableView.reloadData()
         }
     }
-    
 }
